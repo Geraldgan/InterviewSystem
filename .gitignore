@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+.vscode
+data/
+*.mv.db
+
+backend/.gradle
+backend/build
+backend/data
+
+frontend/node_modules
+frontend/dist
+frontend/.hbuilderx
+frontend/.env.local

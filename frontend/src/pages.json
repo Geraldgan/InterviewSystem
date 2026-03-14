@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "智能出题"
+      }
+    },
+    {
+      "path": "pages/history/index",
+      "style": {
+        "navigationBarTitleText": "历史题集"
+      }
+    },
+    {
+      "path": "pages/detail/index",
+      "style": {
+        "navigationBarTitleText": "题集详情"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "面试题库",
+    "navigationBarBackgroundColor": "#FFF7EE",
+    "backgroundColor": "#F6EFE5"
+  },
+  "tabBar": {
+    "color": "#806753",
+    "selectedColor": "#B25B32",
+    "backgroundColor": "#FFF9F3",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "出题"
+      },
+      {
+        "pagePath": "pages/history/index",
+        "text": "题集"
+      }
+    ]
+  }
+}

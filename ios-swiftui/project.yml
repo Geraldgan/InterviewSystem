@@ -1,0 +1,28 @@
+name: InterviewPrep
+options:
+  minimumXcodeGenVersion: 2.38.0
+targets:
+  InterviewPrep:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - InterviewPrep
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.interview.prep
+        SWIFT_VERSION: 6.0
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+    info:
+      path: InterviewPrep/Info.plist
+      properties:
+        CFBundleDisplayName: 面试题库
+        CFBundleShortVersionString: 1.0.0
+        CFBundleVersion: "1"
+        APIBaseURL: http://10.0.20.45:8081
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true

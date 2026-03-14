@@ -1,0 +1,17 @@
+{
+  "name": "InterviewPrep",
+  "appid": "__UNI__INTERVIEW_PREP",
+  "description": "AI 驱动的面试题库与刷题应用",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {
+    "titleNView": false
+  },
+  "mp-weixin": {
+    "appid": ""
+  },
+  "h5": {
+    "title": "面试题库"
+  }
+}
