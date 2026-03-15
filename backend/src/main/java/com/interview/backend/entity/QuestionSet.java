@@ -51,10 +51,11 @@ public class QuestionSet extends BaseEntity {
     private String aiModel;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String promptSnapshot;
 
     @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String rawResponse;
 
     @OrderBy("displayOrder ASC")

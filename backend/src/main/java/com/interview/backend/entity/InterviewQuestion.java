@@ -23,11 +23,11 @@ public class InterviewQuestion extends BaseEntity {
     private Integer displayOrder;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String question;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String answerIdea;
 
     @Column(nullable = false, length = 200)

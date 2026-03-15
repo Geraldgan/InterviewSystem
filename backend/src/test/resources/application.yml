@@ -1,7 +1,7 @@
 spring:
   datasource:
-    # 测试环境使用内存数据库，避免和本地正在运行的 H2 文件库互相锁表。
-    url: jdbc:h2:mem:interview-system-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    # 测试环境继续使用 H2 内存库，但打开 MySQL 兼容模式，避免依赖本地 MySQL 服务。
+    url: jdbc:h2:mem:interview-system-test;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
     password:

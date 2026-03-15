@@ -4,7 +4,7 @@
 
 ## 你现在拿到的内容
 
-- `backend/`: `Spring Boot` 后端，负责岗位画像、题集生成、OpenAI 调用、本地数据库持久化
+- `backend/`: `Spring Boot` 后端，负责岗位画像、题集生成、OpenAI 调用、MySQL 数据持久化
 - `frontend/`: `uni-app + Vue 3` 客户端，面向 `Web / 微信小程序 / Android`
 - `ios-swiftui/`: 原生 `SwiftUI` iOS 客户端骨架
 - `docs/`: 从架构到运行、从后端到 iOS 接入的分步文档
@@ -23,11 +23,15 @@
 
 ```bash
 cd /Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/backend
+mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS interview_system DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+export SPRING_DATASOURCE_URL="jdbc:mysql://127.0.0.1:3306/interview_system?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8"
+export SPRING_DATASOURCE_USERNAME="root"
+export SPRING_DATASOURCE_PASSWORD="你的 MySQL 密码"
 export OPENAI_API_KEY="你的 OpenAI Key"
 JAVA_TOOL_OPTIONS='-Djavax.net.ssl.trustStoreType=KeychainStore -Djavax.net.ssl.trustStore=NONE' ./gradlew bootRun
 ```
 
-如果你暂时还没有配置 `OPENAI_API_KEY`，系统也能跑，因为默认会自动回退到本地模拟题生成器。
+如果你暂时还没有配置 `OPENAI_API_KEY`，系统也能跑，因为默认会自动回退到本地模拟题生成器。现在需要额外保证本地 MySQL 已启动且上述连接信息可用。
 
 ### 2. 运行 Web 前端
 
@@ -54,11 +58,15 @@ npm run dev:mp-weixin
 
 ## 已完成的验证
 
-- 后端 `./gradlew test --no-daemon` 通过
+- 后端 `./gradlew test --no-daemon` 通过，测试环境仍使用 H2 内存库以避免依赖本地 MySQL
 - `SwiftUI` 源码已通过 `swiftc -typecheck`
 - `uni-app` 前端已通过 `npm run build:h5`
 
 ## 建议你先看哪几份文档
+
+如果你现在主要想系统看懂后端，建议先从这份阅读导航开始：
+
+- [11-后端入门阅读顺序.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/11-后端入门阅读顺序.md)
 
 1. [01-架构总览.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/01-架构总览.md)
 2. [02-后端从零搭建.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/02-后端从零搭建.md)

@@ -19,7 +19,12 @@ public class HealthController {
      * @return 简单状态数据
      */
     @GetMapping
-    public Map<String, String> health() {
-        return Map.of("status", "ok");
+//    public Map<String, String> health() {
+//        return Map.of("status", "ok");
+//    }
+    public Map<String, String> health2() {
+        return Map.of(
+            "status","ok2"
+        );
     }
 }
