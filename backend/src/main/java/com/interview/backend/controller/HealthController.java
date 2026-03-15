@@ -24,7 +24,7 @@ public class HealthController {
 //    }
     public Map<String, String> health2() {
         return Map.of(
-            "status","ok2"
+            "status","ok3"
         );
     }
 }

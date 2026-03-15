@@ -33,6 +33,12 @@ JAVA_TOOL_OPTIONS='-Djavax.net.ssl.trustStoreType=KeychainStore -Djavax.net.ssl.
 
 如果你暂时还没有配置 `OPENAI_API_KEY`，系统也能跑，因为默认会自动回退到本地模拟题生成器。现在需要额外保证本地 MySQL 已启动且上述连接信息可用。
 
+后端启动后会自动准备一个演示登录账号，方便你直接联调：
+
+- 用户名：`test`
+- 密码：`123456`
+- 登录接口：`POST /api/auth/login`
+
 ### 2. 运行 Web 前端
 
 ```bash
@@ -67,6 +73,10 @@ npm run dev:mp-weixin
 如果你现在主要想系统看懂后端，建议先从这份阅读导航开始：
 
 - [11-后端入门阅读顺序.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/11-后端入门阅读顺序.md)
+
+如果你已经开始练手写后端接口，尤其是登录接口，也可以直接看这份练手导航：
+
+- [16-登录接口练手阅读顺序.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/16-登录接口练手阅读顺序.md)
 
 1. [01-架构总览.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/01-架构总览.md)
 2. [02-后端从零搭建.md](/Users/geraldgan/Documents/GeraldGan/实践/InterviewSystem/docs/02-后端从零搭建.md)

@@ -56,6 +56,14 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.NOT_FOUND, exception.getMessage(), request.getRequestURI());
     }
 
+    @ExceptionHandler(LoginFailedException.class)
+    public ResponseEntity<ErrorResponse> handleLoginFailed(
+        LoginFailedException exception,
+        HttpServletRequest request
+    ) {
+        return buildResponse(HttpStatus.UNAUTHORIZED, exception.getMessage(), request.getRequestURI());
+    }
+
     @ExceptionHandler({IllegalArgumentException.class, AiGenerationException.class})
     public ResponseEntity<ErrorResponse> handleBusinessException(
         RuntimeException exception,
